@@ -3,6 +3,9 @@
   <title>PHP-Test</title>
  </head>
  <body>
- <?php echo '<p>Hello World</p>'; ?>
+ 
+    <h1>Yakweide</h1>
+
+
  </body>
 </html>	
