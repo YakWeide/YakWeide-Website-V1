@@ -1,2 +1,2 @@
-# Yakweide-Website
-Website for https://www.YakWeide.de
+# YakWeide-Website
+Website for https://YakWeide.de
