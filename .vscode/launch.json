@@ -10,13 +10,6 @@
             "request": "launch",
             "type": "pwa-chrome",
             "url": "https://dev.yakweide.de/",
-        },
-        {
-            "name": "Launch Edge",
-            "preLaunchTask": "UploadWorkspace",
-            "request": "launch",
-            "type": "pwa-msedge",
-            "url": "https://dev.yakweide.de/",
         }
     ]
 }
