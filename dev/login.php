@@ -30,5 +30,9 @@
     </form>
 </section>
 
+<?php
+
+?>
+
  </body>
 </html>	

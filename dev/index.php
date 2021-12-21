@@ -31,14 +31,9 @@
    </div>
 </nav>
 
+<?php
 
-
-
-
-<section>
-    <h2>Yakweide</h2>
-    test
-</section>
+?>
 
  </body>
 </html>	
