@@ -2,7 +2,7 @@
  <head>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="shortcut icon" href="/images/yakweide_logo_klein.png" />
-  <title>YakWeide.de</title>
+   <title>YakWeide.de</title>
  </head>
  <body>
    
@@ -31,9 +31,9 @@
    </div>
 </nav>
 
-<?php
+<div id="page">   
 
-?>
+</div>
 
  </body>
 </html>	
