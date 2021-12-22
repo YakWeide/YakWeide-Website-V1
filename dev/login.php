@@ -40,7 +40,9 @@
 </div>
 
 <?php
-
+  include("authorization.php");
+  $authorization = new authorization();
+  echo $authorization->test() . "<br>";
 ?>
 
  </body>
