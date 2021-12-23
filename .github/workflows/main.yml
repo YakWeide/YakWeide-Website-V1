@@ -12,8 +12,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  # This workflow contains a single job called "deploy"
+  deploy:
     # The type of runner that the job will run on
     runs-on: self-hosted
 
@@ -22,13 +22,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Execute tests
-        env:
-          SECRET_DB_NAME: ${{ secrets.SECRET_DB_NAME }}
-          SECRET_DB_PASS: ${{ secrets.SECRET_DB_PASS }}
-          SECRET_DB_USER: ${{ secrets.SECRET_DB_USER }}
-        run: touch .env
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_SECRET_DB_NAME: ${{ secrets.SECRET_DB_NAME }}
+          envkey_SECRET_DB_PASS: ${{ secrets.SECRET_DB_PASS }}
+          envkey_SECRET_DB_USER: ${{ secrets.SECRET_DB_USER }}
+          directory: /var/actions-runner/_work/YakWeide-Website/YakWeide-Website
+          file_name: .env
