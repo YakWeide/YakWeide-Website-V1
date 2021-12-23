@@ -4,17 +4,17 @@ class authorization {
 
     private $conn;
     private $servername = "localhost";
-    private $username = $_ENV['SECRET_DB_USER'];
-    private $password = $_ENV['SECRET_DB_PASS'];
-    private $dbname = $_ENV['SECRET_DB_NAME'];
+    //private $username = $_ENV['SECRET_DB_USER'];
+    //private $password = $_ENV['SECRET_DB_PASS'];
+    //private $dbname = $_ENV['SECRET_DB_NAME'];
+
+    private $username = "yak";
+    private $password = "Griesheim1234";
+    private $dbname = "yakweide";
 
 
     function __construct() {
-        echo "authorization" . "<br>";
-    }
-
-    public function test() {
-        return "test" . "<br>";
+        
     }
     
     private function openDatabase(){

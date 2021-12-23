@@ -5,7 +5,7 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow
-  pull_request:
+  push:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,6 +31,6 @@ jobs:
       - name: Move to Webserver
         run: |
           rm -r /var/www/YakWeide-Website
-          mv /var/actions-runner/_work/YakWeide-Website/YakWeide-Website /var/www/
-          chown -R www-data:www-data /var/www/YakWeide-Website
+          mv /var/actions-runner/_work/YakWeide-Website/YakWeide-Website /var/www/dev/
+          chown -R www-data:www-data /var/www/dev/YakWeide-Website
 
