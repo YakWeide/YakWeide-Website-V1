@@ -32,9 +32,9 @@ jobs:
           echo SECRET_DB_PASS ${{ secrets.SECRET_DB_PASS }} >> .env
           echo SECRET_DB_USER ${{ secrets.SECRET_DB_USER }} >> .env
 
-      - name: Move to Webserver
+      - name: Copy to Webserver
         run: |
           rm -r /var/www/dev/YakWeide-Website
-          mv /var/actions-runner/_work/YakWeide-Website/YakWeide-Website /var/www/dev/
+          cp -R /var/actions-runner/_work/YakWeide-Website/YakWeide-Website /var/www/dev/
           chown -R www-data:www-data /var/www/dev/YakWeide-Website
 
