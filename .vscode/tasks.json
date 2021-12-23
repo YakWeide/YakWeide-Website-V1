@@ -5,7 +5,7 @@
             "label": "UploadWorkspace",
             "type": "shell",
             "command": [
-                "scp -r ${workspaceFolder}/dev webdev@yakweide.de:/var/www/"
+                "scp -r ${workspaceFolder} webdev@yakweide.de:/var/www/dev"
             ]
         },
     ]

@@ -2,7 +2,12 @@
 
 class authorization {
 
-    private $conn = null;
+    private $conn;
+    private $servername = "localhost";
+    private $username = $_ENV['SECRET_DB_USER'];
+    private $password = $_ENV['SECRET_DB_PASS'];
+    private $dbname = $_ENV['SECRET_DB_NAME'];
+
 
     function __construct() {
         echo "authorization" . "<br>";
@@ -13,16 +18,16 @@ class authorization {
     }
     
     private function openDatabase(){
-        $conn = new mysqli("...", "...", "...", "...");
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error . "<br>");
+        $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error . "<br>");
             return false;
         }
         return true;
     }
 
     private function closeDatabase(){
-        $conn->close();
+        $this->conn->close();
         return true;
     }
 
@@ -33,7 +38,7 @@ class authorization {
         if (isset($username)){
             //$sha256 = hash('sha256', $_POST['password']);
             $getId = "Select id from account where username = '" . $username . "'";
-            $id_result = $conn->query($getId);
+            $id_result = $this->conn->query($getId);
             $id_array = mysqli_fetch_assoc($id_result);
             
             if(count($id_array) > 0){
