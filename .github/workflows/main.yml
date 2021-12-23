@@ -28,4 +28,4 @@ jobs:
           echo SECRET_DB_NAME ${{ secrets.SECRET_DB_NAME }} >> .env
           echo SECRET_DB_PASS ${{ secrets.SECRET_DB_PASS }} >> .env
           echo SECRET_DB_USER ${{ secrets.SECRET_DB_USER }} >> .env
-          mv -R .env /var/actions-runner/_work/YakWeide-Website
+          mv .env /var/actions-runner/_work/YakWeide-Website
