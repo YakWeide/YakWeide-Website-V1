@@ -34,7 +34,7 @@ jobs:
 
       - name: Move to Webserver
         run: |
-          rm -r /var/www/YakWeide-Website
+          rm -r /var/www/dev/YakWeide-Website
           mv -r /var/actions-runner/_work/YakWeide-Website/YakWeide-Website /var/www/dev/
           chown -R www-data:www-data /var/www/dev/YakWeide-Website
 

@@ -1,9 +1,8 @@
 <?php
 
   include("siteSetup.php");
-  $siteSetup = new siteSetup("YakWeide", "");
+  $siteSetup = new siteSetup("YakWeide test", "");
    
-
-   $siteSetup->printFooter();
+  $siteSetup->printFooter();
 
 ?>
