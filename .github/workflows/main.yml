@@ -32,5 +32,6 @@ jobs:
         run: |
           rm -r /var/www/YakWeide-Website
           cp -R /var/actions-runner/_work/YakWeide-Website/YakWeide-Website /var/www/
+          chmod -R 775 /var/www/YakWeide-Website
           chown -R www-data:www-data /var/www/YakWeide-Website
 

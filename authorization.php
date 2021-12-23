@@ -18,8 +18,8 @@ class authorization {
         $DotEnv = new DotEnv(".env");
         $DotEnv->load();
         echo getenv('SECRET_DB_NAME') . "<br>";
-        echo getenv('SECRET_DB_PASS') . "<br>"
-        echo getenv('SECRET_DB_USER') . "<br>"
+        echo getenv('SECRET_DB_PASS') . "<br>";
+        echo getenv('SECRET_DB_USER') . "<br>";
     }
     
     private function openDatabase(){
