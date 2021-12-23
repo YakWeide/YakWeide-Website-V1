@@ -14,11 +14,11 @@ class authorization {
 
 
     function __construct() {
-        use DotEnv;
-        (new DotEnv(__DIR__ . '/.env'))->load();
-        echo getenv('SECRET_DB_NAME') . "<br>";
-        echo getenv('SECRET_DB_PASS') . "<br>"
-        echo getenv('SECRET_DB_USER') . "<br>"
+        //use DotEnv;
+        //(new DotEnv(__DIR__ . '/.env'))->load();
+        //echo getenv('SECRET_DB_NAME') . "<br>";
+        //echo getenv('SECRET_DB_PASS') . "<br>"
+        //echo getenv('SECRET_DB_USER') . "<br>"
     }
     
     private function openDatabase(){
