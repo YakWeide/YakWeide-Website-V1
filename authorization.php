@@ -14,7 +14,7 @@ class authorization {
 
 
     function __construct() {
-        use DotEnv;
+        include("DotEnv.php");
         //(new DotEnv(__DIR__ . '/.env'))->load();
         //echo getenv('SECRET_DB_NAME') . "<br>";
         //echo getenv('SECRET_DB_PASS') . "<br>"
