@@ -22,6 +22,7 @@ jobs:
 
       - name: Create envfile
         run: |
+          rm /var/actions-runner/_work/YakWeide-Website/YakWeide-Website/.env
           touch .env
           echo SECRET_DB_NAME ${{ secrets.SECRET_DB_NAME }} >> .env
           echo SECRET_DB_PASS ${{ secrets.SECRET_DB_PASS }} >> .env
