@@ -65,6 +65,7 @@ class DotEnv
             $value = trim($value);
 
             if($env_name == $name) {
+                echo $value . "<br>";
                 return $value;
             }
         }  

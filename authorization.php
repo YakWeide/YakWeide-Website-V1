@@ -17,7 +17,7 @@ class authorization {
         include("DotEnv.php");
         $DotEnv = new DotEnv(".env");
         //$DotEnv->load();
-        echo "DotEnv loaded";
+        echo "DotEnv loaded" . "<br>";
         echo $DotEnv->get('SECRET_DB_NAME') . "<br>";
         echo $DotEnv->get('SECRET_DB_PASS') . "<br>";
         echo $DotEnv->get('SECRET_DB_USER') . "<br>";
