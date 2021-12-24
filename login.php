@@ -18,11 +18,12 @@
 
 <?php
   
-  //if (isset($_POST['username']) && isset($_POST['password'])){
+  if (isset($_POST['username']) && isset($_POST['password'])){
     
     //echo $authorization->checkUsernameAvailable($_POST['username']);
+    echo "test";
 
-  //}
+  }
 
 ?>
 
