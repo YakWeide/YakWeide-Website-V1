@@ -61,11 +61,11 @@ class DotEnv
             }
 
             list($env_name, $value) = explode('=', $line, 2);
-            $env_name = trim($naenv_nameme);
+            $env_name = trim($env_name);
             $value = trim($value);
             echo $value . "<br>";
             if($env_name == $name) {
-                echo "Return <br>";
+                echo "Return<br>";
                 return $value;
             }
         }  
