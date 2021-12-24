@@ -9,12 +9,22 @@
 ?>
    
    <h2>Login</h2>
-    <form action="authorization.php" method="post">
+    <form action="login.php" method="post">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="submit" value="Login">
     </form>
     <a href="signup.php">Registrieren</a>
+
+<?php
+  
+  if (isset($_POST['username']) && isset($_POST['password'])){
+    
+    echo $authorization->checkUsernameAvailable($_POST['username']);
+
+  }
+
+?>
 
 <?php
    $siteSetup->printFooter();
