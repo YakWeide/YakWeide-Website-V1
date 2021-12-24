@@ -48,7 +48,7 @@ class DotEnv
 
     public function get(string $name)
     {
-        echo $name . "<br>";
+        echo $name . " ";
         if (!is_readable($this->path)) {
             throw new \RuntimeException(sprintf('%s file is not readable', $this->path));
         }
@@ -63,9 +63,9 @@ class DotEnv
             list($env_name, $value) = explode('=', $line, 2);
             $env_name = trim($naenv_nameme);
             $value = trim($value);
-
+            echo $value . "<br>";
             if($env_name == $name) {
-                echo $value . "<br>";
+                echo "Return <br>";
                 return $value;
             }
         }  
