@@ -16,11 +16,10 @@ class authorization {
     function __construct() {
         include("DotEnv.php");
         $DotEnv = new DotEnv(".env");
-        //$DotEnv->load();
-        echo "DotEnv loaded" . "<br>";
-        echo $DotEnv->get('SECRET_DB_NAME') . "<br>";
-        echo $DotEnv->get('SECRET_DB_PASS') . "<br>";
-        echo $DotEnv->get('SECRET_DB_USER') . "<br>";
+        $DotEnv->load();
+        echo getenv('SECRET_DB_NAME', true) . "<br>";
+        echo getenv('SECRET_DB_PASS', true) . "<br>";
+        echo getenv('SECRET_DB_USER', true) . "<br>";
     }
     
     private function openDatabase(){
