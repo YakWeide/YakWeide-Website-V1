@@ -3,29 +3,25 @@
 class authorization {
 
     private $conn;
-    private $servername = "localhost";
-    //private $username = $_ENV['SECRET_DB_USER'];
-    //private $password = $_ENV['SECRET_DB_PASS'];
-    //private $dbname = $_ENV['SECRET_DB_NAME'];
+    private $db_servername = "localhost";
 
-    private $username = "yak";
-    private $password = "Griesheim1234";
-    private $dbname = "yakweide";
+    private $db_username;
+    private $db_password;
+    private $db_dbname;
 
 
     function __construct() {
         include("DotEnv.php");
         $DotEnv = new DotEnv(".env");
         $DotEnv->load();
-        echo getenv('SECRET_DB_NAME', true) . "<br>";
-        echo getenv('SECRET_DB_PASS', true) . "<br>";
-        echo getenv('SECRET_DB_USER', true) . "<br>";
+        $this->db_username = getenv('SECRET_DB_USER', true);
+        $this->db_password = getenv('SECRET_DB_PASS', true);
+        $this->db_dbname = getenv('SECRET_DB_NAME', true);
     }
     
-    private function openDatabase(){
-        $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+    public function openDatabase(){
+        $this->conn = new mysqli($this->db_servername, $this->db_username, $this->db_password, $this->db_dbname);
         if ($this->conn->connect_error) {
-            echo "Connection failed: " . $this->conn->connect_error . "<br>";
             die("Connection failed: " . $this->conn->connect_error);
             return false;
         }
@@ -39,10 +35,10 @@ class authorization {
 
     //0 = error, 1 = failure, 2 = success
     public function checkUsernameAvailable($username) {
-        if(!openDatabase()) return 0;
-        //if (isset($_POST['username']) && isset($_POST['password'])){
+        if (!$this->openDatabase()) {
+            return 0;
+        }
         if (isset($username)){
-            //$sha256 = hash('sha256', $_POST['password']);
             $getId = "Select id from account where username = '" . $username . "'";
             $id_result = $this->conn->query($getId);
             $id_array = mysqli_fetch_assoc($id_result);
@@ -53,7 +49,7 @@ class authorization {
                 return 2;
             }
         }
-        closeDatabase();
+        $this->closeDatabase();
     }
     
 }

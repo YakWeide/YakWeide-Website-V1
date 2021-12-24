@@ -19,13 +19,13 @@
 <?php
   
   if (isset($_POST['username']) && isset($_POST['password'])){
-    
-    //echo $authorization->checkUsernameAvailable($_POST['username']);
-    echo "test <br>";
-
-    $authorization->openDatabase();
-
-    echo "test1 <br>";
+    if($authorization->checkUsernameAvailable($_POST['username']) == 0){
+      echo "Error<br>";
+    }else if($authorization->checkUsernameAvailable($_POST['username']) == 1){
+      echo "Username already taken<br>";
+    }else if($authorization->checkUsernameAvailable($_POST['username']) == 2){
+      echo "Username available<br>";
+    }
   }
 
 ?>
