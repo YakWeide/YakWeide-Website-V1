@@ -20,9 +20,12 @@
   
   if (isset($_POST['username']) && isset($_POST['password'])){
     
-    echo $authorization->checkUsernameAvailable($_POST['username']);
-    echo "test";
+    //echo $authorization->checkUsernameAvailable($_POST['username']);
+    echo "test <br>";
 
+    $authorization->openDatabase();
+
+    echo "test1 <br>";
   }
 
 ?>
