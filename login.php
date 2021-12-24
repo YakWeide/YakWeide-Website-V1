@@ -15,12 +15,12 @@
         <input type="submit" value="Login">
     </form>
     <a href="signup.php">Registrieren</a>
-
+    <br>
 <?php
   
   if (isset($_POST['username']) && isset($_POST['password'])){
     
-    //echo $authorization->checkUsernameAvailable($_POST['username']);
+    echo $authorization->checkUsernameAvailable($_POST['username']);
     echo "test";
 
   }
