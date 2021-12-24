@@ -35,7 +35,8 @@ class DotEnv
             $name = trim($name);
             $value = trim($value);
 
-            echo var.dump(list($name, $value));
+            echo $name . "<br>";
+            echo $value . "<br>";
 
             if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
                 putenv(sprintf('%s=%s', $name, $value));
