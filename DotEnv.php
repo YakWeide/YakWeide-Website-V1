@@ -46,9 +46,9 @@ class DotEnv
         }
     }
 
-    public function get(string $name)
+    public function get(string $env_name)
     {
-        echo $name . " ";
+        echo "env_name: " . $env_name . "<br>";
         if (!is_readable($this->path)) {
             throw new \RuntimeException(sprintf('%s file is not readable', $this->path));
         }
@@ -60,15 +60,18 @@ class DotEnv
                 continue;
             }
 
-            list($env_name, $value) = explode('=', $line, 2);
-            $env_name = trim($env_name);
+            list($name, $value) = explode('=', $line, 2);
+            $name = trim($name);
             $value = trim($value);
-            echo $value . "<br>";
-            if($env_name == $name) {
-                echo "Return<br>";
+
+            echo "name: " . $name . " ";
+            echo "value: " . $value . "<br>";
+
+            if($name == $env_name) {
+                echo "return <br>";
                 return $value;
             }
-        }  
+        }
         return "";
     }
 }
